@@ -36,7 +36,14 @@ function linkedList (head) {
         },
         showHead: () => {
             console.log(head);
-        } 
+        },
+        tail: function tail(head) {
+            let current = head;
+            if (current.next === null) console.log(`Tail: ${current.value}`);
+            else {
+                tail(current.next);
+            }
+        },
     }
 }
 
@@ -47,5 +54,4 @@ listMain.append(node1, 'test1');
 listMain.append(node1, 'test2');
 listMain.prepend(node1, 'prepended');
 
-listMain.size(listMain.head);
-listMain.showHead();
+listMain.tail(listMain.head);
