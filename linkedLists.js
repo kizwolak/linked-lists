@@ -19,15 +19,20 @@ function linkedList (head) {
                 append(current.next, value);
             }
         },
+        prepend: function prepend(head, value) {
+            let newHead = node(value);
+            newHead.next = head;
+            head = newHead;
+            listMain = linkedList(newHead);
+        }
     }
 }
 
 
-const listMain = linkedList(node1);
+let listMain = linkedList(node1);
 
 listMain.append(node1, 'test1');
 listMain.append(node1, 'test2');
+listMain.prepend(node1, 'prepended');
 
-
-console.log(listMain.head.next);
-console.log(listMain.head);
+console.log(listMain.head.next.next);
