@@ -33,7 +33,10 @@ function linkedList (head) {
             }
             console.log(counter);
             return counter;
-        }
+        },
+        showHead: () => {
+            console.log(head);
+        } 
     }
 }
 
@@ -45,3 +48,4 @@ listMain.append(node1, 'test2');
 listMain.prepend(node1, 'prepended');
 
 listMain.size(listMain.head);
+listMain.showHead();
