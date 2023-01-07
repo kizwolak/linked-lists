@@ -52,8 +52,17 @@ function linkedList (head) {
                 current = current.next;
             }
             if (index === number) return current.value;
-            
-        }
+        },
+        pop: function pop(head) {
+            let current = head;
+            while (current.next.next !== null) {
+                current = current.next;
+            }
+            console.log(current.next);
+            console.log(current.next.next);
+            current.next = current.next.next;
+            console.log(current.next);
+        } 
     }
 }
 
@@ -64,4 +73,6 @@ listMain.append(node1, 'test1');
 listMain.append(node1, 'test2');
 listMain.prepend(node1, 'prepended');
 
-console.log(listMain.atIndex(listMain.head, 3));
+listMain.pop(listMain.head);
+
+console.log(listMain.head.next.next);
