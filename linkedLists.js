@@ -1,15 +1,23 @@
-function linkedList () {
+function node(value) {
     return {
-        node: class Node {
-            constructor(value) {
-                this.value = value;
-                this.next = null;
-            }
-        }
+        value: value,
+        next: null,
     }
 }
 
-const list = linkedList();
+const node1 = node('test');
 
-console.log(new list.node(''));
+function linkedList (head) {
+    if (head === undefined) head = null;
+    let size = 0;
+    return {
+        head,
+        append: function append(value) {
 
+        },
+    }
+}
+
+
+const listMain = linkedList(node1);
+console.log(listMain.head);
