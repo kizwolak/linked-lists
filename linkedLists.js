@@ -44,6 +44,16 @@ function linkedList (head) {
                 tail(current.next);
             }
         },
+        atIndex: function atIndex(head, number) {
+            let index = 0;
+            let current = head;
+            while (index !== number) {
+                index += 1;
+                current = current.next;
+            }
+            if (index === number) return current.value;
+            
+        }
     }
 }
 
@@ -54,4 +64,4 @@ listMain.append(node1, 'test1');
 listMain.append(node1, 'test2');
 listMain.prepend(node1, 'prepended');
 
-listMain.tail(listMain.head);
+console.log(listMain.atIndex(listMain.head, 3));
