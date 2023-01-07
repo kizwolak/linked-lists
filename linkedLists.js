@@ -9,7 +9,6 @@ const node1 = node('test');
 
 function linkedList (head) {
     if (head === undefined) head = null;
-    let size = 0;
     return {
         head,
         append: function append(head, value) {
@@ -24,6 +23,16 @@ function linkedList (head) {
             newHead.next = head;
             head = newHead;
             listMain = linkedList(newHead);
+        },
+        size: function size(head) {
+            let current = head;
+            let counter = 0;
+            while (current !== null) {
+                counter += 1;
+                current = current.next;
+            }
+            console.log(counter);
+            return counter;
         }
     }
 }
@@ -35,4 +44,4 @@ listMain.append(node1, 'test1');
 listMain.append(node1, 'test2');
 listMain.prepend(node1, 'prepended');
 
-console.log(listMain.head.next.next);
+listMain.size(listMain.head);
