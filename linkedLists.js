@@ -12,12 +12,22 @@ function linkedList (head) {
     let size = 0;
     return {
         head,
-        append: function append(value) {
-
+        append: function append(head, value) {
+            let current = head;
+            if (current.next === null) current.next = node(value);
+            else {
+                append(current.next, value);
+            }
         },
     }
 }
 
 
 const listMain = linkedList(node1);
+
+listMain.append(node1, 'test1');
+listMain.append(node1, 'test2');
+
+
+console.log(listMain.head.next);
 console.log(listMain.head);
