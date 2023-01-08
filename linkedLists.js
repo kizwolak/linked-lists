@@ -58,11 +58,16 @@ function linkedList (head) {
             while (current.next.next !== null) {
                 current = current.next;
             }
-            console.log(current.next);
-            console.log(current.next.next);
             current.next = current.next.next;
-            console.log(current.next);
-        } 
+        },
+        contains: function contains(head, value) {
+            let current = head;
+            if (current.value === value) 
+            {
+                return true;
+            }
+            return contains(current.next, value);
+        }
     }
 }
 
@@ -75,4 +80,4 @@ listMain.prepend(node1, 'prepended');
 
 listMain.pop(listMain.head);
 
-console.log(listMain.head.next.next);
+console.log(listMain.contains(listMain.head, 'test1'));
